@@ -19,12 +19,49 @@ public class CourseDBElement implements Comparable {
 
 
     public int getCRN() {
-        return 0;
+        return CRN;
+    }
+
+    public String getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(String courseId) {
+        this.courseId = courseId;
+    }
+
+    public int getNumberOfCredits() {
+        return numberOfCredits;
+    }
+
+    public void setNumberOfCredits(int numberOfCredits) {
+        this.numberOfCredits = numberOfCredits;
+    }
+
+    public String getRoomNumber() {
+        return roomNumber;
+    }
+
+    public void setRoomNumber(String roomNumber) {
+        this.roomNumber = roomNumber;
+    }
+
+    public String getInstructorName() {
+        return instructorName;
+    }
+
+    public void setInstructorName(String instructorName) {
+        this.instructorName = instructorName;
     }
 
     @Override
     public int compareTo(CourseDBElement element) {
-        return 0;
+        if (this.CRN > element.CRN)
+            return 1;
+        else if (this.CRN < element.CRN)
+            return -1;
+        else
+            return 0;
     }
 
     @Override
@@ -34,4 +71,7 @@ public class CourseDBElement implements Comparable {
         return hashCode;
     }
 
+    public void setCRN(int crn) {
+        this.CRN = crn;
+    }
 }
